@@ -1,0 +1,40 @@
+Step 1 create a Hadoop drectory
+
+Hadoop fs -mkdir /input 
+ 
+Step 2 make folder anywhere and give name " FILES "
+
+Step 3 make inside text and give me name  " page1 "
+
+step 4 open text file " page 1" write names duplicate 
+
+Step 5 Copy path of text file "page1"
+
+Step 6 terminal write code:-
+-->	hadoop fs -put past file path /input 
+--> i.e (hadoop fs -put C:\Users\prajw\Documents\FILES\page1.txt /input)
+
+	for show files--> Hadoop fs -ls /input
+Step 7 Open Eclip 
+
+I)file -> new -> java project -> project name ' MapReduceWordCount ' -> JRE javaSE-1.8 ->    finish
+
+ii)select new project right click -> New ->Package ->Name com.mapreduce.wc -> fininsh
+ 
+iii)right click on project -> New -> build path -> Library -> add external jar -> this pc Hadoop share folder all folder choose jar files (client , common , hdfs)
+
+iv) under src com.maoreduce.wc-> right click -> New -> Class -> Name :- WordCount -> past code java
+
+v) after save ctrl+s -> make sure classs name same -> right click on MapReduceWordCount -> build path add more jar files again 
+
+vi)Right click on MapReduceWordCount -> Export -> select java folder click -> select JAR file -> next  -> Destination path changes to ur location (before in page1.txt file)
+
+step 8 Copy the path of JAR file is ready to run
+
+step 9 open terminal command 
+ --> Hadoop jar path without command com.mapreduce.wc/WordCount /input/page1.txt /output
+
+Step 10 wait 1 2 mins
+
+step 11 Hadoop dfs -cat /output/*
+op show
